@@ -15,14 +15,14 @@ android {
 
         externalNativeBuild {
             cmake {
-                abiFilters 'armeabi-v7a'
+                abiFilters 'armeabi-v7a','x86'
                 cppFlags "-frtti -fexceptions -D__ANDROID__ -std=c++11"
                 cFlags "-D__ANDROID__ -DAL_ALEXT_PROTOTYPES -DANDROID"
             }
         }
         //非 app module里面就需要
         ndk {
-            abiFilters 'armeabi-v7a'
+            abiFilters 'armeabi-v7a','x86'
         }
     }
 
@@ -40,6 +40,7 @@ android {
     //非APP module里面就需要
     packagingOptions {
         pickFirst 'lib/armeabi-v7a/librender-lib.so'
+        pickFirst 'lib/x86/librender-lib.so'
     }
 
 
