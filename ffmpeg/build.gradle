@@ -39,8 +39,8 @@ android {
     }
     //非APP module里面就需要
     packagingOptions {
-        pickFirst 'lib/armeabi-v7a/librender-lib.so'
-        pickFirst 'lib/x86/librender-lib.so'
+        pickFirst 'lib/armeabi-v7a/libzplay-lib.so'
+        pickFirst 'lib/x86/libzplay-lib.so'
     }
 
 

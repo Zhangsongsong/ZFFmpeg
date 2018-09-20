@@ -8,13 +8,13 @@ cmake_minimum_required(VERSION 3.4.1)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI})
 
 add_library( # Sets the name of the library.
-             render-lib
+             zplay-lib
 
              # Sets the library as a shared library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             ${CMAKE_SOURCE_DIR}/src/main/cpp/render-lib.cpp )
+             ${CMAKE_SOURCE_DIR}/src/main/cpp/zplay-lib.cpp )
 
 
 
@@ -23,7 +23,7 @@ add_library( # Sets the name of the library.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-                       render-lib
+                       zplay-lib
 
                        # Links the target library to the log library
                        # included in the NDK.
