@@ -7,7 +7,22 @@
     <com.zasko.zffmpeg.sureface.MSurfaceView
         android:id="@+id/surface_view"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <com.zasko.zffmpeg.sureface.MGLSurfaceView
+        android:id="@+id/gl_surface_view"
+        android:layout_width="match_parent"
         android:layout_height="300dp" />
+
+    <Button
+        android:id="@+id/request_render_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="request render"
+        app:layout_constraintCircle="@id/gl_surface_view"
+        app:layout_constraintCircleAngle="180"
+        app:layout_constraintCircleRadius="180dp" />
 
 
 </android.support.constraint.ConstraintLayout>
