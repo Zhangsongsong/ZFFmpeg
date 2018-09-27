@@ -118,6 +118,7 @@ public class Triangle {
 
         // Disable vertex array
         GLES20.glDisableVertexAttribArray(mPositionHandle);
+
     }
 
 }
