@@ -9,7 +9,11 @@ public class RenderManager {
 
     public static native String getConfig();
 
+    public static native void initCodec();
+
 
     public static native void playFile(String filePath);
+
+    public static native void pcm2Wav();
 
 }

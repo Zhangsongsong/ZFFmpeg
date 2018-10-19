@@ -1,9 +1,9 @@
 apply plugin: 'com.android.library'
 
 android {
+
+    publishNonDefault  true
     compileSdkVersion 28
-
-
 
     defaultConfig {
         minSdkVersion 19
@@ -15,21 +15,32 @@ android {
 
         externalNativeBuild {
             cmake {
-                abiFilters 'armeabi-v7a','x86'
+                abiFilters 'armeabi-v7a', 'x86'
                 cppFlags "-frtti -fexceptions -D__ANDROID__ -std=c++11"
                 cFlags "-D__ANDROID__ -DAL_ALEXT_PROTOTYPES -DANDROID"
             }
         }
+
         //非 app module里面就需要
         ndk {
-            abiFilters 'armeabi-v7a','x86'
+            moduleName "ffmpeg"
+            ldLibs "log"
+            abiFilters 'armeabi-v7a', 'x86'
+
         }
     }
 
     buildTypes {
         release {
+            debuggable false
+            jniDebuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            jniDebuggable true
+
         }
     }
     externalNativeBuild {
@@ -47,6 +58,5 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
