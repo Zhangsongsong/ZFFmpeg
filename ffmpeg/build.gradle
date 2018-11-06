@@ -16,7 +16,7 @@ android {
         externalNativeBuild {
             cmake {
                 abiFilters 'armeabi-v7a', 'x86'
-                cppFlags "-frtti -fexceptions -D__ANDROID__ -std=c++11"
+                cppFlags "-frtti -fexceptions -D__ANDROID__ -std=c++14"
                 cFlags "-D__ANDROID__ -DAL_ALEXT_PROTOTYPES -DANDROID"
             }
         }
@@ -30,19 +30,19 @@ android {
         }
     }
 
-    buildTypes {
-        release {
-            debuggable false
-            jniDebuggable false
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            debuggable true
-            jniDebuggable true
-
-        }
-    }
+//    buildTypes {
+//        release {
+//            debuggable false
+//            jniDebuggable false
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//        debug {
+//            debuggable true
+//            jniDebuggable true
+//
+//        }
+//    }
     externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
@@ -59,4 +59,5 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.+'
 }

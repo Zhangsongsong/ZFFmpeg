@@ -16,4 +16,10 @@ public class RenderManager {
 
     public static native void pcm2Wav();
 
+    public static int getTest() {
+        int i = 0;
+
+        return i;
+    }
+
 }
